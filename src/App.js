@@ -12,7 +12,7 @@ function App() {
     const newTodoList = [...todoList, newTask];
     setTodoList(newTodoList);
 
-  }
+  };
   
   return (
     <div className="App">
@@ -20,10 +20,13 @@ function App() {
         <input onChange={handleChange} />
         <button onClick={addTask}>Add Task</button>
       </div>
-      <div className="List"></div>
-      {newTask}
+      <div className='list'>
+        {todoList.map((task) => {
+          return <h1>{task}</h1>
+        })}
+      </div>
     </div>
-  );
-}
 
+  );
+      }
 export default App;
